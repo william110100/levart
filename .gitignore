@@ -1,0 +1,29 @@
+# Miscellaneous
+.DS_Store
+.env
+
+# Next
+.next
+
+# Node
+node_modules
+
+# Production
+build
+
+# Testing
+coverage
+
+# Typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Vercel
+.vercel
+
+# Visual Studio Code
+.vscode
+
+# Yarn
+yarn-debug.log*
+yarn-error.log*
