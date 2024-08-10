@@ -1,12 +1,18 @@
 # Miscellaneous
 .DS_Store
 .env
+.env*.local
+.pnp
+.pnp.js
+*.pem
 
 # Next
 .next
+out
 
 # Node
 node_modules
+npm-debug.log*
 
 # Production
 build
@@ -25,5 +31,6 @@ next-env.d.ts
 .vscode
 
 # Yarn
+.yarn/install-state.gz
 yarn-debug.log*
 yarn-error.log*

@@ -1,6 +1,5 @@
 {
-  "name": "tyrads",
-  "version": "1.0.0",
+  "name": "zamrood",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -8,31 +7,25 @@
     "lint": "next lint",
     "start": "next start"
   },
+  "version": "0.0.1",
   "dependencies": {
-    "@headlessui/react": "^1.7.18",
-    "@mantine/charts": "^7.6.1",
-    "@mantine/core": "^7.6.1",
-    "@mantine/hooks": "^7.6.1",
-    "@tabler/icons-react": "^2.47.0",
-    "framer-motion": "^11.0.6",
-    "next": "^14.1.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-dropzone": "^14.2.3",
-    "recharts": "^2.12.1"
+    "@tanstack/react-query": "^5.51.23",
+    "next": "^14.2.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@types/node": "^20.11.21",
-    "@types/react": "^18.2.60",
-    "@types/react-dom": "^18.2.19",
-    "autoprefixer": "^10.4.17",
+    "@tanstack/eslint-plugin-query": "^5.51.15",
+    "@types/node": "^22.1.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
     "eslint": "^8.57.0",
-    "eslint-config-next": "^14.1.0",
-    "postcss": "^8.4.35",
-    "postcss-import": "^16.0.1",
-    "postcss-preset-mantine": "^1.13.0",
-    "sass": "^1.71.1",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.3.3"
+    "eslint-config-next": "^14.2.5",
+    "postcss": "^8.4.41",
+    "postcss-import": "^16.1.0",
+    "sass": "^1.77.8",
+    "tailwindcss": "^3.4.9",
+    "typescript": "^5.5.4"
   }
 }

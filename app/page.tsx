@@ -1,157 +1,193 @@
 "use client";
 
-import { Avatar, Tooltip } from "@mantine/core";
-import { IconLogout, IconMessages, IconSearch } from "@tabler/icons-react";
-import { cloneElement, useState } from "react";
+import { Article, Destination } from "@/components";
 import {
-  Analytic,
-  BalanceStatistic,
-  ExpenseIncome,
-  Messenger,
-  Premium,
-  ShoppingNote,
-  Spending,
-  Transaction,
-  VisaCard,
-} from "./components";
-import { Button } from "./components/cores/Button";
-import { NAVS, SPENDINGS, TRANSACTIONS } from "./utils/constants";
-import { Modal } from "./components/cores/Modal";
+  Banner,
+  Customize,
+  Email,
+  Exclusive,
+  Facebook,
+  Facility,
+  HamburgerMenu,
+  Instagram,
+  Itinerary,
+  Logo1,
+  Logo2,
+  Separator1,
+} from "@/public";
+import Image from "next/image";
 
 const Page = () => {
-  const [logout, setLogout] = useState<boolean>(false);
-  const [menu, setMenu] = useState<string>("home");
-
   return (
-    <main className="bg-[#EEE8FA] flex items-center min-h-screen min-w-screen scroll-smooth">
-      <div className="bg-white flex flex-col h-screen items-center justify-between p-4 w-[100px]">
-        <div className="flex flex-col gap-y-12 items-center p-2">
-          <Tooltip label="William" position="right">
-            <span className="font-semibold text-[32px]">W.</span>
-          </Tooltip>
-          <Tooltip label="Messenger" position="right">
-            <div>
-              <Button
-                className="bg-[#FFC885] p-2.5 rounded-full"
-                hoverScale={1}
-                onClick={() => {}}
-                tapScale={0.96}
-                type="button"
-              >
-                <IconMessages color="#1E293B" size={20} />
-              </Button>
-            </div>
-          </Tooltip>
-        </div>
-        <div className="bg-[#EEE8FA] flex flex-col gap-y-8 items-center p-1 rounded-full">
-          {NAVS?.map(({ children, id }) => (
-            <Tooltip
-              className="capitalize"
-              label={id}
-              key={id}
-              position="right"
+    <main className="max-w-[1440px] min-h-dvh min-w-full">
+      <header className="bg-[#FAF9F5] h-24 px-4 py-6 fixed top-0 w-full z-10 lg:bg-transparent">
+        <div className="flex items-center justify-between max-w-[1096px] mx-auto">
+          <Image
+            alt="Logo 1"
+            className="lg:hidden"
+            height={50}
+            src={Logo1}
+            width={135}
+          />
+          <Image
+            alt="Logo 2"
+            className="hidden lg:block"
+            height={50}
+            src={Logo2}
+            width={135}
+          />
+          <button className="lg:hidden">
+            <Image
+              alt="Hamburger Menu"
+              height={50}
+              src={HamburgerMenu}
+              width={50}
+            />
+          </button>
+          <div className="hidden gap-x-6 items-center lg:flex">
+            <button className="hover:border-b-[2px] hover:border-b-[#FAF9F5] hover:border-solid px-4 py-[18px]">
+              <span className="font-bold leading-5 text-[#FAF9F5] text-[16px]">
+                Homepage
+              </span>
+            </button>
+            <button className="hover:border-b-[2px] hover:border-b-[#FAF9F5] hover:border-solid px-4 py-[18px]">
+              <span className="font-bold leading-5 text-[#FAF9F5] text-[16px]">
+                Customize Your Trip
+              </span>
+            </button>
+            <button className="hover:border-b-[2px] hover:border-b-[#FAF9F5] hover:border-solid px-4 py-[18px]">
+              <span className="font-bold leading-5 text-[#FAF9F5] text-[16px]">
+                Destination
+              </span>
+            </button>
+            <button className="hover:border-b-[2px] hover:border-b-[#FAF9F5] hover:border-solid px-4 py-[18px]">
+              <span className="font-bold leading-5 text-[#FAF9F5] text-[16px]">
+                Article
+              </span>
+            </button>
+            <button
+              className="border-[2px] border-[#FAF9F5] border-solid px-6 py-2.5 rounded-full"
+              type="button"
             >
-              <div>
-                <Button
-                  className={`${
-                    id === menu ? "bg-[#6B6EFF]" : ""
-                  } p-1 rounded-full`}
-                  hoverScale={1}
-                  onClick={() => setMenu(id)}
-                  tapScale={0.96}
-                  type="button"
-                >
-                  {id === menu
-                    ? cloneElement(children, { color: "#FFFFFF" })
-                    : children}
-                </Button>
-              </div>
-            </Tooltip>
-          ))}
-        </div>
-        <div className="bg-[#EEE8FA] flex flex-col gap-y-1 items-center p-2 rounded-full">
-          <Avatar color="cyan" radius="xl">
-            W
-          </Avatar>
-          <Button
-            className="p-1"
-            hoverScale={1}
-            onClick={() => setLogout(true)}
-            tapScale={0.96}
-            type="button"
-          >
-            <IconLogout color="#1E293B" size={20} />
-          </Button>
-        </div>
-      </div>
-      <div className="flex flex-col h-screen gap-y-8 p-8 w-full">
-        <div className="flex items-center justify-between sticky z-1">
-          <div className="flex flex-col">
-            <span className="font-semibold text-[24px]">Hello, William</span>
-            <span className="font-medium text-[12px]">
-              View and control your finances here!
-            </span>
-          </div>
-          <Button
-            className="bg-white hover:opacity-50 p-2 rounded-full"
-            hoverScale={1}
-            onClick={() => {}}
-            tapScale={0.96}
-            type="button"
-          >
-            <IconSearch />
-          </Button>
-        </div>
-        <div className="flex flex-col gap-y-8 overflow-y-scroll relative">
-          <div className="flex gap-8 w-full sm:flex-col md:flex-col">
-            <BalanceStatistic />
-            <VisaCard />
-          </div>
-          <div className="flex w-full sm:flex-col sm:gap-y-8 md:flex-col md:gap-y-8">
-            <ShoppingNote />
-            <Messenger />
-          </div>
-          <div className="flex gap-8 w-full sm:flex-col md:flex-col">
-            <Transaction items={TRANSACTIONS} />
-            <Analytic />
+              <span className="font-bold leading-5 text-[#FAF9F5] text-[16px]">
+                Need Assitance?
+              </span>
+            </button>
           </div>
         </div>
-      </div>
-      <div className="bg-white flex flex-col gap-y-6 h-screen overflow-y-scroll p-6 relative w-[500px]">
-        <ExpenseIncome
-          expensePercentage={65}
-          expenseTotal={6500}
-          incomePercentage={35}
-          incomeTotal={3500}
+      </header>
+      <section className="flex mt-24 place-items-center relative lg:mt-0">
+        <img
+          alt="Banner"
+          className="object-center object-cover"
+          src={Banner.src}
         />
-        <Spending items={SPENDINGS} />
-        <Premium />
-      </div>
-      <Modal onClose={() => setLogout(false)} show={logout}>
-        <div className="flex flex-col gap-y-8 p-6 w-full">
-          <span className="font-normal leading-6 text-[14px] text-black">
-            Are you sure want to logout?
+        <div className="absolute inset-x-0 flex flex-col items-center gap-y-2 mx-auto px-4 w-full lg:items-start lg:max-w-7xl">
+          <span className="font-bold leading-[30px] text-[#FAF9F5] text-[24px] text-center lg:leading-[68px] lg:text-left lg:text-[54px]">
+            Beyond Expectation
           </span>
-          <div className="flex gap-x-2 items-center justify-end">
-            <Button
-              className="bg-transparent font-normal leading-5 px-4 py-3.5 rounded-lg text-[#026CB8] text-[14px] text-center"
-              hoverScale={1}
-              onClick={() => setLogout(false)}
-              tapScale={0.96}
-            >
-              Cancel
-            </Button>
-            <Button
-              className="bg-[#DC2626] font-normal leading-5 px-4 py-3.5 rounded-lg text-[14px] text-center text-white"
-              hoverScale={1}
-              onClick={() => {}}
-              tapScale={0.96}
-            >
-              Logout
-            </Button>
+          <div className="flex flex-col gap-y-6 items-center w-full lg:items-start lg:max-w-[708px]">
+            <span className="leading-5 text-center text-[#FAF9F5] text-[16px] lg:leading-[30px] lg:text-left lg:text-[24px]">
+              Experience the finest that Indonesia has to offer with our curated
+              selection of premium trips, ensuring comfort every step of the way
+            </span>
+            <button className="border-[2px] border-[#FAF9F5] border-solid px-6 py-2.5 rounded-full w-fit">
+              <span className="font-bold leading-5 text-[#FAF9F5] text-[16px]">
+                Take me there
+              </span>
+            </button>
           </div>
         </div>
-      </Modal>
+      </section>
+      <div className="flex flex-col gap-y-4 max-w-[1096px] mx-auto px-4 py-4 w-full lg:gap-y-[72px] lg:py-[72px]">
+        <div className="flex flex-col">
+          <span className="font-bold leading-10 text-[#004040] text-[32px] text-center uppercase">
+            Elevate Your Experience
+          </span>
+        </div>
+        <div className="gap-6 grid lg:grid-cols-3">
+          <div className="flex flex-col items-center lg:gap-y-6">
+            <img alt="Personal Itineraries" src={Itinerary.src} />
+            <div className="flex flex-col gap-y-2 items-center">
+              <span className="font-bold leading-7 text-[#0B7373] text-[24px]">
+                PERSONAL ITINERARIES
+              </span>
+              <span className="leading-5 text-[16px] text-black text-center">
+                Our premium travel services offer tailor-made itineraries
+                crafted to suit your unique preferences and desires.
+              </span>
+            </div>
+          </div>
+          <div className="flex flex-col items-center lg:gap-y-6">
+            <img alt="Exclusive Experience" src={Exclusive.src} />
+            <div className="flex flex-col gap-y-2 items-center">
+              <span className="font-bold leading-7 text-[#0B7373] text-[24px]">
+                EXCLUSIVE EXPERIENCES
+              </span>
+              <span className="leading-5 text-[16px] text-black text-center">
+                From private charters to behind-the-scenes tours, we offer
+                access to unique opportunities that are designed to elevate your
+                trip to the next level.
+              </span>
+            </div>
+          </div>
+          <div className="flex flex-col items-center lg:gap-y-6">
+            <img alt="Best Facilities" src={Facility.src} />
+            <div className="flex flex-col gap-y-2 items-center">
+              <span className="font-bold leading-7 text-[#0B7373] text-[24px]">
+                BEST FACILITIES
+              </span>
+              <span className="leading-5 text-[16px] text-black text-center">
+                Experience the epitome of with our premium facility, designed to
+                provide an unparalleled level of comfort and indulgence.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex flex-col gap-y-4 items-center max-w-[952px] mx-auto px-4 py-4 mt-[54px] lg:flex-row lg:gap-x-6 lg:py-[72px] lg:mt-0">
+        <img
+          alt="Customize"
+          className="w-[200px] lg:w-[400px]"
+          src={Customize.src}
+        />
+        <div className="flex flex-col gap-y-4 items-center lg:items-start">
+          <span className="font-bold leading-10 text-[#004040] text-[32px] text-center">
+            Discover Tailored Experiences
+          </span>
+          <span className="leading-5 text-[16px] text-black text-center lg:text-start">
+            Create your own journey, personalized to suit your preferences and
+            interests, ensuring a once-in-a-lifetime adventure awaits.
+          </span>
+          <button
+            className="bg-[#004040] px-6 py-[18px] rounded-full w-full lg:py-2.5 lg:w-fit"
+            type="button"
+          >
+            <span className="font-bold leading-5 text-[16px] text-[#FAF9F5]">
+              Customize Your Trip
+            </span>
+          </button>
+        </div>
+      </div>
+      <img
+        alt="Separator 1"
+        className="max-w-[1096px] mx-auto px-4 w-full"
+        src={Separator1.src}
+      />
+      <Destination />
+      <Article />
+      <footer className="bg-[#004040] px-4 py-6">
+        <div className="flex flex-col gap-y-4 items-center max-w-[1096px] mx-auto lg:flex-row lg:justify-between">
+          <span className="leading-5 text-[16px] text-white">
+            © 2023 Zamrood by PT Teknologi Pandu Wisata
+          </span>
+          <div className="flex gap-x-6 items-center">
+            <Image alt="Facebook" height={24} src={Facebook} width={24} />
+            <Image alt="Instagram" height={24} src={Instagram} width={24} />
+            <Image alt="Email" height={24} src={Email} width={24} />
+          </div>
+        </div>
+      </footer>
     </main>
   );
 };
