@@ -1,13 +1,17 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
-    "./app/**/*.{js,jsx,mdx,ts,tsx}",
-    "./components/**/*.{js,jsx,mdx,ts,tsx}",
-    "./pages/**/*.{js,jsx,mdx,ts,tsx}",
+    './app/**/*.{js,jsx,mdx,ts,tsx}',
+    './components/**/*.{js,jsx,mdx,ts,tsx}',
+    './pages/**/*.{js,jsx,mdx,ts,tsx}',
   ],
   plugins: [],
-  theme: {},
+  theme: {
+    backgroundImage: {
+      hyperhire: "url('/background.png')",
+    },
+  },
 };
 
 export default config;

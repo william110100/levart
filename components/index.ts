@@ -1,4 +1,5 @@
-import { Article } from "./Article";
-import { Destination } from "./Destination";
+import { Header } from './Header';
+import { Footer } from './Footer';
+import { Section } from './Section';
 
-export { Article, Destination };
+export { Header, Footer, Section };
