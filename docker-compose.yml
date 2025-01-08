@@ -1,0 +1,20 @@
+version: "3.7"
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: 'cms-msone'
+    volumes:
+      - ./src:/usr/src/app/src
+      - ./debug.log:/usr/src/app/debug.log
+      - /usr/local/data:/data
+    networks:
+      msone-backend:
+        aliases:
+          - cms-msone
+
+networks:
+  msone-backend:
+    external: true
