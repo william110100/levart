@@ -26,7 +26,7 @@
     "downshift": "^3.4.8",
     "draft-js": "^0.11.7",
     "draftjs-to-html": "^0.8.4",
-    "firebase": "^8.0.0",
+    "firebase": "^10.9.0",
     "google-map-react": "^2.1.8",
     "history": "^4.9.0",
     "install": "^0.12.2",
